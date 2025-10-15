@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f1430a-36c2-4d86-a1db-64e6f048b21d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Purevia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urunler/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Purevia/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purevia/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Purevia/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purevia/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urunler/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urunler/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urunler/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urunler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,6 +45,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -68,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760541118368</updated>
-      <workItem from="1760541119446" duration="4431000" />
+      <workItem from="1760541119446" duration="8063000" />
     </task>
     <servers />
   </component>

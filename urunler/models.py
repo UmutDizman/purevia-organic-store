@@ -1,9 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Urunler(models.Model):
     isim = models.CharField(max_length=100)
+    kullanici = models.ForeignKey(User,on_delete=models.CASCADE)
     fiyat = models.DecimalField(decimal_places=2, max_digits=10)
     kisa_aciklama = models.CharField(max_length=100, null=True, blank=True)
     aciklama=models.TextField(blank=True, null=True)
@@ -11,7 +13,7 @@ class Urunler(models.Model):
     seo_description = models.TextField( null=True, blank=True)
     slug = models.SlugField(max_length=100, null=True, blank=True)
     aktifmi = models.BooleanField(default=True)
-    resim = models.ImageField(null=True, blank=True)
+    resim = models.ImageField(upload_to="urunresimleri", null=True, blank=True)
     tarih = models.DateTimeField(auto_now_add=True)
     anasayfa = models.BooleanField(default=True)
 
@@ -23,5 +25,23 @@ class Urunler(models.Model):
 
     def __str__(self):
         return self.isim
+
+
+class Markalar(models.Model):
+    isim = models.CharField(max_length=100)
+    aciklama = models.CharField(max_length=100, null=True, blank=True)
+    seo_title = models.CharField(max_length=100, null=True, blank=True)
+    seo_description = models.TextField( null=True, blank=True)
+    slug = models.SlugField(max_length=100, null=True, blank=True)
+    aktifmi = models.BooleanField(default=True)
+    resim = models.ImageField(upload_to="markaresimleri", null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Markalar"
+        verbose_name = "Markalar"
+
+    def __str__(self):
+        return self.isim
+
 
 

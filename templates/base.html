@@ -1,10 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %} {% endblock title %}</title>
+
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+    
 </head>
 <body>
+<header class="site-header">
+    <div class="container nav-row">
+        <a href="/" class="brand">Purevia</a>
 
+
+        <button id="navBtn" class="hamburger" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç/kapat">
+            <span></span><span></span><span></span>
+        </button>
+
+
+        <nav id="nav" class="nav" role="navigation">
+            <a href="/urunler" class="active">Ürünler</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+
+
+<main>
+{% block content %}
+{% endblock content %}
+</main>
+
+<footer>
+    
+</footer>
+
+<script src="{% static 'js/hamburger.js' %}"></script>
 </body>
 </html>

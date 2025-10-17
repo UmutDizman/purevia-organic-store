@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f1430a-36c2-4d86-a1db-64e6f048b21d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Purevia/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purevia/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Purevia/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Purevia/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/urunler/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/urunler/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urunler/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urunler/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/urunler/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="346js3VAbgIGkTawvj97EXr61aO" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,12 +45,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/umuts/Desktop/django_projeler/Purevia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "de.achimonline.quickjinja.settings.QuickJinjaAppSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -74,7 +70,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760541118368</updated>
-      <workItem from="1760541119446" duration="8063000" />
+      <workItem from="1760541119446" duration="8567000" />
+      <workItem from="1760597201369" duration="8692000" />
+      <workItem from="1760621610262" duration="49000" />
+      <workItem from="1760621675564" duration="273000" />
     </task>
     <servers />
   </component>

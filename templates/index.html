@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% load static %}
+
+{% block title %}
+Anasayfa
+{% endblock title %}
+
+{% block content %}
+<section class="container">
+    <h2 class="secton-title">
+        Popüler Ürünler
+    </h2>
+    <div class="product-grid">
+        {% for urun in products %}
+            <article class="card">
+                <a href="/urun/{{urun.slug}}" class="card-media">
+                    {% if urun.resim %}
+                        <img src="{{ urun.resim.url }}" alt="{{urun.isim}}">
+                    {% else %}
+                        <img src="{% static 'default_image1.jpg' %}" alt="resim yok">
+                    {% endif %}
+                </a>
+                <div class="card-body">
+                    <h3 class="card-title clamp-1"> {{urun.isim}} </h3>
+
+
+                    {% if urun.kisa_aciklama %}
+                        <p class="card-desc clamp-2"> {{urun.kisa_aciklama}} </p>
+                    {% endif %}
+
+                    <div class="card-footer">
+                        <div class="price-row">
+                            {% if urun.indirimli_fiyat %}
+                                <strong class="price-discount"> {{urun.indirimli_fiyat}}$</strong>
+                                <del class="old">{{urun.fiyat}}$</del>
+                            {% else %}
+                                <strong class="price"> {{urun.fiyat}}$</strong>
+                            {% endif %} 
+                        </div>
+                    </div>
+
+                    <a href="{% url 'purevia:urundetay' urun.slug %}" class="btn btn-primary">İncele</a>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}

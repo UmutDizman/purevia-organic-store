@@ -1,0 +1,224 @@
+
+:root{
+    --container:1280px;
+    --brand: #006241;
+    --blur-bg: rgba(255,255,255,.65);
+    --nav-offset: 100px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+.container{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0  16px;
+}
+
+
+/*herderde Header :D */
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--blur-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+}
+
+.nav-row{
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+a {
+    text-decoration: none;
+}
+.brand{
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: .2px;
+    text-decoration: none;
+    
+}
+
+/*nav*/
+.nav{
+    display: flex;
+    gap: 20px;
+}
+
+.nav a{
+    padding: 10px 8px;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav a:hover{
+    background: rgba(0, 0, 0, .06);
+    color: var(--brand);
+}
+
+.nav a::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .25s ease;
+}
+
+.nav a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav a.active{
+    color: var(--brand);
+}
+.nav a.active::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/*Hambagarrr*/
+.hamburger{
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    padding: 8px;
+    border-radius: 10px;
+
+}
+
+.hamburger:focus{
+    outline: none;
+}
+
+.hamburger span{
+    display: block;
+    height: 2px;
+    background: #222;
+    margin: 6px 0;
+    transition: .25s;
+
+}
+
+/**/
+@keyframes navItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.site-header{
+    background: rgba(255, 255, 255, .72);
+    backdrop-filter: blur(10px);
+
+}
+@media( max-width: 920px ){
+    .hamburger{
+        display: inline-block;
+    }
+    .nav{
+        position: fixed;
+        top: var(--nav-offset,75px) ;
+        left: 0;
+        right: 0;
+        z-index: 99;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 16px;
+
+        background: #fff;
+
+        transform: translateY(calc(-100% - 24px));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        box-shadow: none;
+        border-bottom: none;
+
+        
+        transition: 
+            transform .28s ease,
+            opacity .2s ease,
+            visibility 0s linear.28s;
+       
+        box-shadow: 0 4px 12px rgba(0,0,0,.05); 
+    }
+    .nav a{
+        padding: 12px 10px;
+        border-radius: 12px;
+        color: #333;
+
+    }
+
+    .nav.open{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: 0   4   12px    rgba(0, 0, 0, .05);
+        border-bottom: 1px solid rgba(0, 0, 0, .06);
+
+        transition: 
+         transform .28 ease,
+         opacity .2s ease;
+
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+    .nav.open a { opacity: 0; }
+    .nav.open a:nth-child(1){ animation: navItemIn .25s .05s both; }
+    .nav.open a:nth-child(2){ animation: navItemIn .25s .10s both; }
+    .nav.open a:nth-child(3){ animation: navItemIn .25s .15s both; }
+
+    .hamburger.open span:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.open span:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+.nav-toggle{
+    display: none;
+}
+.body-lock{
+    overflow: hidden;
+    height: 100vh;
+}
+
+.hamburger:focus-visible, .nav a:focus-visible{
+    outline: 3px solid rgba(0, 98, 65, .35);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+
+

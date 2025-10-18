@@ -7,20 +7,41 @@ Anasayfa
 {% endblock title %}
 
 {% block content %}
+
+<section class="hero" style="--hero-img: url('{% static "images/arkaplan2.png" %}');">
+    <div class="container">
+        <div class="hero-inner">
+            <h1 class="hero-title">Doğal ve Taze Ürünler</h1>
+            <p class="hero-sub">Çiflikten sofranıza: her gün taze, güvenilir ve uygun fiyatlı.</p>
+
+
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">Ürünleri Gör</a>
+                <a href="#" class="btn btn-ghost">Hakkımızda</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
 <section class="container">
-    <h2 class="secton-title">
-        Popüler Ürünler
-    </h2>
+    <h2 class="secton-title"> Popüler Ürünler</h2>
     <div class="product-grid">
         {% for urun in products %}
             <article class="card">
-                <a href="/urun/{{urun.slug}}" class="card-media">
+                <a href="{% url 'purevia:urundetay' urun.slug %}" class="card-media">
                     {% if urun.resim %}
-                        <img src="{{ urun.resim.url }}" alt="{{urun.isim}}">
+                        <img src="{{ urun.resim.url }}" alt="{{ urun.isim }}">
                     {% else %}
-                        <img src="{% static 'default_image1.jpg' %}" alt="resim yok">
+                        <img src="{% static 'default_image1.jpg' %}" alt="{{ urun.isim }}">
                     {% endif %}
                 </a>
+
+
+                
                 <div class="card-body">
                     <h3 class="card-title clamp-1"> {{urun.isim}} </h3>
 
@@ -39,8 +60,8 @@ Anasayfa
                             {% endif %} 
                         </div>
                     </div>
-
                     <a href="{% url 'purevia:urundetay' urun.slug %}" class="btn btn-primary">İncele</a>
+                    
                 </div>
             </article>
         {% endfor %}

@@ -41,10 +41,33 @@
 {% endblock content %}
 </main>
 
-<footer>
-    
+<footer class="site-footer">
+    <div class="container footer-row">
+        <a href="/" class="footer-brand">Purevia</a>
+
+        <nav class="footer-links">
+            <a href="#">Ürünler</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+        </nav>
+
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="ico">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM17.75 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+            </a>
+            <a href="#" aria-label="Twiter/X" class="ico">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.3 3H17l-5 6.9L6.9 3H3l7 9.6L3.3 21H6.6l5.1-7 5 7h3.3l-7.2-9.9L20.3 3z"/></svg>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <small>© {{now|date:"Y"}} Purevia - Tüm hakları saklıdır. </small>
+    </div>
 </footer>
 
 <script src="{% static 'js/hamburger.js' %}"></script>
+<script src="{% static 'js/reveal.js' %}"></script>
 </body>
 </html>

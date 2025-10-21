@@ -33,11 +33,7 @@ Anasayfa
         {% for urun in products %}
             <article class="card">
                 <a href="{% url 'purevia:urundetay' urun.slug %}" class="card-media">
-                    {% if urun.resim %}
-                        <img src="{{ urun.resim.url }}" alt="{{ urun.isim }}">
-                    {% else %}
-                        <img src="{% static 'default_image1.jpg' %}" alt="{{ urun.isim }}">
-                    {% endif %}
+                    <img src="{{ urun.image_url }}" alt="{{ urun.isim }}">
                 </a>
 
 

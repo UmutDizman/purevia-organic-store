@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {% block extra_css %} {% endblock extra_css %}
     
 
     
@@ -27,7 +28,7 @@
 
 
         <nav id="nav" class="nav" role="navigation">
-            <a href="/urunler" class="active">Ürünler</a>
+            <a href="#">Ürünler</a>
             <a href="#">Hakkımızda</a>
             <a href="#">İletişim</a>
         </nav>
@@ -69,5 +70,11 @@
 
 <script src="{% static 'js/hamburger.js' %}"></script>
 <script src="{% static 'js/reveal.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'js/messages.js' %}"></script>
+
+{% if messages %}
+    <div id="django-messages" data-messages='[{% for m in messages %}{"text": "{{ m |escapejs }}", "tags": "{{ m.tags | default_if_none:"" }}" } {% if not forloop.last %}, {% endif %} {% endfor %}]'></div>
+{% endif %}
 </body>
 </html>

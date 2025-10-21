@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Sepet{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="container">
+    <h2>Sepet</h2>
+
+    {% if items %}
+        <form action="{% url 'purevia:cart_update' %}" method="POST">
+            {% csrf_token %}
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Adet</th>
+                        <th>Birim</th>
+                        <th>Toplam</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for it in items %}
+                        <tr>
+                            <td><a href="{% url 'purevia:urundetay' it.urun.slug %}">{{it.urun.isim}} </a></td>
+                            <td><input type="number" name="qty_{{ it.urun.id }}" value="{{ it.qty }}" min="1" class="qty-input"></td>
+                            <td>{{ it.price }} $</td>
+                            <td>{{ it.line_total }} $</td>
+                            
+                            <td><a href="{% url 'purevia:cart_remove' it.urun.id %}" class="btn btn-ghost">Sil</a></td>
+                            
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="cart-bottom" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px;">
+                <strong>Ara Toplam: {{ total }}$ </strong>
+              <div>
+                <button class="btn btn-ghost" type="submit">Güncelle</button>
+                <a href="{% url 'purevia:checkout' %}" class="btn btn-ghost">Ödemeye Geç</a>
+              </div>
+            </div>
+        </form>
+        {% else %}
+         <p>Sepetin boş</p>
+        {% endif %}
+</section>
+
+
+{% endblock content %}
+
+
+
+

@@ -1,11 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Ürün Detay{% endblock title %}
+{% block title %}{{urun.isim}} Detay{% endblock title %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
 
+<section class="product container">
+    <div class="product-grid">
+        <div class="product-media">
 
 
+            {% if urun.resim %}
+                <img src="{{urun.resim.url}}" alt="{{urun.isim}}">
+            {% else %}
+                <img src="{% static 'default_image1.jpg' %}" alt="urun.isim">
+            {% endif %}
+
+        </div>  
+                
+
+            
+        <div class="product-info">
+                
+            <h1 class="product-title"> {{urun.isim}} </h1>
+             <p class="product-desc"> {{urun.aciklama}} </p>
+                
+        <div class="product-price">
+            {% if urun.indirimli_fiyat %}
+                <strong class="price-discount"> {{urun.indirimli_fiyat}} $</strong>
+                <del class="old">{{urun.fiyat}} $</del>
+            {% else %}
+                <strong class="price">{{urun.fiyat}} $</strong>
+            {% endif %}
+        </div>
+        <div class="product-actions">
+            <form action="{% url 'purevia:cart_add' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ urun.id }}">
+                <input type="number" step="1" name="qty" min="1" value="1" class="qty-input">
+                <button type="submit" class="btn btn-primary">Sepete Ekle</button>
+
+            </form>
+        </div>
+        </div>
+
+     </div> 
+    
+        
+    
+</section>
 
 
 {% endblock content %}

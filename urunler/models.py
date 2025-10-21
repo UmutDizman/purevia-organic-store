@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-
+from django.templatetags.static import static
 # Create your models here.
 
 
@@ -58,6 +58,18 @@ class Urunler(models.Model):
     resim = models.ImageField(upload_to="urunresimleri", null=True, blank=True)
     tarih = models.DateTimeField(auto_now_add=True)
     anasayfa = models.BooleanField(default=True)
+
+
+    @property
+    def image_url(self):
+        try:
+            if self.resim and hasattr(self.resim, "url"):
+                return self.resim.url
+            
+        except Exception:
+            pass
+
+        return static("/default_image1.jpg")
 
 
     class Meta:

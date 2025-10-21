@@ -6,6 +6,7 @@ body{
   font-size: 16px;
   line-height: 1.6;
   color: #333;
+  
 }
 
 h1, h2, h3, h4, h5 {
@@ -313,7 +314,7 @@ main .container .content-container {
 
 .btn-primary{
     flex-shrink: 0;
-    background-color: #4fab8c;
+    background-color: #03583a;
     color: #fff;
     border-radius: 12px;
     
@@ -322,7 +323,8 @@ main .container .content-container {
 }
 
 .btn-primary:hover{
-    background: #03583a;
+    
+    background: #08845b;
     transform: translateY(-2px);
 }
 
@@ -568,7 +570,7 @@ footer small{
 .footer-social .ico{
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 36px;
     height: 36px;
     border-radius: 10px;
@@ -582,6 +584,7 @@ footer small{
     background: rgba(0, 0, 0, .08);
     color: #006241;
     transform: translateY(-1px);
+    
 
 }
 
@@ -602,3 +605,5 @@ footer small{
         flex-wrap: wrap;
     }
 }
+
+

@@ -36,7 +36,7 @@
             {% endif %}
         </div>
         <div class="product-actions">
-            <form action="{% url 'purevia:cart_add' %}" method="POST">
+            <form action="{% url 'purevia:cart_add' %}" method="POST" class="add-to-cart">
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{ urun.id }}">
                 <input type="number" step="1" name="qty" min="1" value="1" class="qty-input">

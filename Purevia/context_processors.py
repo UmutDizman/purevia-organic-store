@@ -18,3 +18,17 @@ def global_context(request):
 
     }
     
+
+
+def cart_counter(request):
+    cart = request.session.get('cart') or {}
+    total_qty = 0
+
+    for _, row in cart.items():
+
+        try:
+            total_qty += int(row.get('qty', 1))
+        
+        except Exception:
+            total_qty += 1
+    return {'cart_count':total_qty}

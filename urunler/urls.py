@@ -20,6 +20,8 @@ urlpatterns = [
     path('kategori/<slug:slug>/', views.kategoridetay, name='kategoridetay'),
     path('urun/<slug:slug>/', views.urundetaysayfa, name='urundetay'),
 
+    path('accounts/signup/', views.signup, name='signup'),
+
 
     
     

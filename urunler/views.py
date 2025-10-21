@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Urunler,Kategoriler
 from .utils import get_cart, save_cart
 from decimal import Decimal
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login as auth_login
 
 # Create your views here.
 
@@ -24,6 +25,25 @@ def kategoridetay(request,slug):
     urunler = Urunler.objects.filter(kategori=kategori)
     return render(request, 'kategoridetay.html',{"kategori":kategori,"products":urunler})
 
+
+
+
+#user
+
+def signup(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            messages.success(request, "Hesabınız oluşturuldu, hoş geldin!")
+
+            next_url = request.GET.get("next") or request.POST.get("next")
+            return redirect(next_url or "purevia:index")
+        
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/signup.html", {"form":form})
 
 
 

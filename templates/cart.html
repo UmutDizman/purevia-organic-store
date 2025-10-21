@@ -29,9 +29,8 @@
                             <td><input type="number" name="qty_{{ it.urun.id }}" value="{{ it.qty }}" min="1" class="qty-input"></td>
                             <td>{{ it.price }} $</td>
                             <td>{{ it.line_total }} $</td>
-                            
-                            <td><a href="{% url 'purevia:cart_remove' it.urun.id %}" class="btn btn-ghost">Sil</a></td>
-                            
+                            <td><button class="btn btn-ghost" type="submit">Değişiklikleri Uygula</button></td>
+                            <td><a href="{% url 'purevia:cart_remove' it.urun.id %}" class="btn btn-ghost">Sil</a></td>   
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Giriş Yap
+{% endblock title %}
+
+{% block content %}
+<section class="container">
+    <h1 style="margin-bottom: 16px;">Giriş Yap</h1>
+    <form action="{% url 'login' %}" method="POST" class="card p-3" style="gap:12px">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">{{ form.non_form_errors }} </div>
+        {% endif %}
+
+        <div class="form-group">
+            <label for="id_username">Kullanıcı adı</label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label for="id_password">Şifre</label>
+            {{ form.password }}
+        </div>
+        <label style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" name="remember_me" value="1"> Beni hatırla
+        </label>
+
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+        {% endif %}
+
+
+        <button class="btn btn-ghost" type="submit">Giriş Yap</button>
+
+        <p style="margin-top: 8px;">
+            Hesabın yok mu?
+            <a href="{% url 'purevia:signup' %}{% if next %}?next={{ next|urlencode }}{% endif %}">Kayıt ol</a>
+        </p>
+    </form>
+</section>
+{% endblock content %}
